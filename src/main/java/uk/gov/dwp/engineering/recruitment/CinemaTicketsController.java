@@ -29,6 +29,7 @@ public class CinemaTicketsController {
    */
   @PostMapping(value = "/bookings", consumes = "application/json", produces = "application/json")
   public ResponseEntity<BookingConfirmation> makeBooking(@RequestBody Booking ticketBooking) {
+
     return new ResponseEntity<>(cinemaTicketsService.purchaseTickets(ticketBooking.accountId(),
         ticketBooking.ticketRequests()), HttpStatus.CREATED);
   }
