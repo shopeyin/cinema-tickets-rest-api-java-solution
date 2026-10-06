@@ -1,8 +1,7 @@
 package uk.gov.dwp.engineering.recruitment;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoInteractions;
+import static org.mockito.Mockito.*;
 import static uk.gov.dwp.engineering.recruitment.domain.TicketType.ADULT;
 import static uk.gov.dwp.engineering.recruitment.domain.TicketType.CHILD;
 import static uk.gov.dwp.engineering.recruitment.domain.TicketType.INFANT;
@@ -324,13 +323,10 @@ class CinemaTicketsServiceImplTest {
                 infantTickets
         );
 
-        verify(paymentService)
-                .debitAccount(
-                        accountId,
-                        new BigDecimal("86.98")
-                );
+        verify(paymentService, times(1))
+                .debitAccount(accountId, new BigDecimal("86.98"));
 
-        verify(seatReservationService)
+        verify(seatReservationService, times(1))
                 .reserveSeats(accountId, 4L);
     }
 }

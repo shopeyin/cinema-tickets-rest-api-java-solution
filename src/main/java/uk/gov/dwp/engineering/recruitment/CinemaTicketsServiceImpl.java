@@ -27,9 +27,7 @@ public class CinemaTicketsServiceImpl implements CinemaTicketsService {
   }
 
   @Override
-  public BookingConfirmation purchaseTickets(
-          final Long accountId,
-          final TicketRequest... ticketRequests)
+  public BookingConfirmation purchaseTickets( final Long accountId,final TicketRequest... ticketRequests)
           throws InvalidBookingException {
 
     ticketPurchaseValidator.validateAccount(accountId);
@@ -39,15 +37,9 @@ public class CinemaTicketsServiceImpl implements CinemaTicketsService {
 
     ticketPurchaseValidator.validateBusinessRules(summary);
 
-    paymentService.debitAccount(
-            accountId,
-            summary.totalPrice()
-    );
+    paymentService.debitAccount(accountId,summary.totalPrice());
 
-    seatReservationService.reserveSeats(
-            accountId,
-            summary.seatCount()
-    );
+    seatReservationService.reserveSeats( accountId, summary.seatCount());
 
     return new BookingConfirmation(accountId);
   }

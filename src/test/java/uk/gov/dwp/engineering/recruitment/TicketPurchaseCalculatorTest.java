@@ -10,7 +10,7 @@ import uk.gov.dwp.engineering.recruitment.domain.TicketRequest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.dwp.engineering.recruitment.domain.TicketType.ADULT;
 import static uk.gov.dwp.engineering.recruitment.domain.TicketType.CHILD;
-import static uk.gov.dwp.engineering.recruitment.domain.TicketType.INFANT;;
+import static uk.gov.dwp.engineering.recruitment.domain.TicketType.INFANT;
 
 class TicketPurchaseCalculatorTest {
 
