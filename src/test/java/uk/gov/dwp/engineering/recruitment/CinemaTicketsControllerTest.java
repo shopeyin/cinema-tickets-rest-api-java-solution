@@ -8,16 +8,11 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.http.MediaType;
 
-import uk.gov.dwp.engineering.recruitment.domain.BookingConfirmation;
-import uk.gov.dwp.engineering.recruitment.domain.TicketRequest;
-import uk.gov.dwp.engineering.recruitment.exception.InvalidBookingException;
 import uk.gov.dwp.engineering.recruitment.thirdparty.PaymentService;
 import uk.gov.dwp.engineering.recruitment.thirdparty.SeatReservationService;
 
 import java.math.BigDecimal;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
